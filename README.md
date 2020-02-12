@@ -121,14 +121,14 @@ We recommend using [Bowtie2](http://bowtie-bio.sourceforge.net/bowtie2/index.sht
 For example:
 
 ```
-# Download Paratyphi A AKU_12601 (FM200053) and unzip the CT18 reference genome
+# Download Paratyphi A AKU_12601 (FM200053) and unzip the reference genome
 
 wget -O ...
 
 gunzip ...
 
 # Separate the chromosome sequence from the plasmids with the emboss toolkit
-seqretsplit CT18.fasta
+seqretsplit ...
 
 mv ...
 
@@ -146,7 +146,7 @@ wget ...
 
 # Use bowtie to map reads to the Paratyphi A AKU_12601 (FM200053) reference genome
 
-For example, to align paired end reads to the CT18 reference genome sequence:
+For example, to align paired end reads to the Paratyphi A AKU_12601 (FM200053) reference genome sequence:
 
 bowtie2-build ...
 
@@ -158,7 +158,7 @@ samtools sort ... output
 
 (or, 'samtools sort unsorted_output.bam > output.bam' for SAMtools v1.3.1 instead of SAMtools v1.2/1.1)
 
-# Call Typhi genotypes from the resulting BAM(s)
+# Call ... genotypes from the resulting BAM(s)
 
 python genoparatyphi.py --mode bam --bam output.bam --ref ... --ref_id ... --output genotypes_test.txt
 
@@ -182,12 +182,12 @@ For example:
 ```
 # Download Paratyphi A AKU_12601 (FM200053) reference genome
 
-wget ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCA_000195995.1_ASM19599v1/GCA_000195995.1_ASM19599v1_genomic.fna.gz
+wget ...
 
 gunzip ...
 mv ... ...
 
-# Download two example Typhi genomes for genotyping
+# Download two example Paratyphi A genomes for genotyping
 
 wget ...
 wget ...
@@ -199,11 +199,11 @@ mkdir genomes/
 mv ... genomes/...
 mv ... genomes/...
 
-# Use ParSNP to generate variant calls (VCF) for these genomes against the CT18 reference sequence
+# Use ParSNP to generate variant calls (VCF) for these genomes against the Paratyphi A AKU_12601 (FM200053) reference sequence
 
 parsnp -r ... -d genomes/ -o output
 
-# Call Typhi genotypes from the resulting VCF
+# Call ... from the resulting VCF
 
 python genoparatyphi.py --mode vcf_parsnp --vcf output/parsnp.vcf --output genotypes_parsnptest.txt
 
