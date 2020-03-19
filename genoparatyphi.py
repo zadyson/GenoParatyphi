@@ -128,8 +128,8 @@ def main():
 	amr_wt_aa = {'gyrA-87': 'D', 'gyrA-83': 'S', 'parC-80': 'S','parC-84': 'E', 'acrB-717':'R'}
 	# base positions for each codon, in order of base 1, 2, 3 on the FORWARD STRAND
 	# note that the read codons and bases for parC are on the reverse complement strand
-	amr_loci = {'gyrA-87': [669213, 669214, 669213], 'gyrA-83': [669201,669202,669203],'parC-80': [3145220,3145221,3145222],'parC-84': [3145208,3145209,3145210], 'acrB-717': [2338395,2338396,2338397]}
-	amr_loci_list = [669213, 669214, 669213, 669201,669202,669203, 3145220,3145221,3145222, 3145208,3145209,3145210,2338395,2338396,2338397]
+	amr_loci = {'gyrA-87': [669213, 669214, 669215], 'gyrA-83': [669201,669202,669203],'parC-80': [3145220,3145221,3145222],'parC-84': [3145208,3145209,3145210], 'acrB-717': [2338395,2338396,2338397]}
+	amr_loci_list = [669213, 669214, 669215, 669201,669202,669203, 3145220,3145221,3145222, 3145208,3145209,3145210,2338395,2338396,2338397]
 	amr_ref_alleles = {'gyrA-87': ['G','A','C'], 'gyrA-83': ['T','C','C'], 'parC-80': ['G','C','T'], 'parC-84': ['T','T','C'], 'acrB-717': ['C','G','A']}
 
 	if (((args.mode == 'vcf') and args.vcf and args.ref_id) or (
