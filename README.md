@@ -16,7 +16,7 @@ For short read data, we recommend using the raw alignments (BAM files) as input 
 
 For assemblies, we recommend using [ParSNP](http://harvest.readthedocs.org/) (version 1.0.1) to align genomes to the AKU_12601 reference. The resulting multi-sample VCF file(s) can be passed directly to this script via --vcf_parsnp.
 
-Dependencies: Python 2.7.5+ ([SAMtools](http://samtools.sourceforge.net/) and [BCFtools](https://samtools.github.io/bcftools/) are also required if you are working from BAM files.  Genoparatyphi has been tested with versions 1.1, 1.2, and 1.3 of both SAMtools and bcftools, subsequently we advise using the same version of both of these dependencies together i.e. SAMtools v1.2 and bcftools v1.2).
+Dependencies: Python 2.7.5+ with [Biopython](https://biopython.org/) ([SAMtools](http://samtools.sourceforge.net/) and [BCFtools](https://samtools.github.io/bcftools/) are also required if you are working from BAM files.  Genoparatyphi has been tested with versions 1.1, 1.2, and 1.3 of both SAMtools and bcftools, subsequently we advise using the same version of both of these dependencies together i.e. SAMtools v1.2 and bcftools v1.2).
 
 
 
