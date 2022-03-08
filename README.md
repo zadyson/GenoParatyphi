@@ -1,4 +1,4 @@
-# genoparatyphi
+# GenoParatyphi
 
 ## Please note that GenoParatyphi is no longer updated, the newly developed [Paratype] (https://github.com/CHRF-Genomics/Paratype/) tool carries out the same AMR calling functions as GenoParatyphi, but also types sequences accoring to a newly developed [Paratyphi A genotyping framework](https://www.medrxiv.org/content/10.1101/2021.11.13.21266165v2).
 
