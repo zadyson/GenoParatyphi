@@ -1,4 +1,7 @@
 # genoparatyphi
+
+## Please note that GenoParatyphi is no longer updated, the newly developed [Paratype](https://github.com/CHRF-Genomics/Paratype/) carries out the same AMR calling functions as GenoParatyphi, but also types sequences accoring to a newly developed [Paratyphi A genotyping framework](https://www.medrxiv.org/content/10.1101/2021.11.13.21266165v2).
+
 Detect AMR mutations in Salmonella Paratyphi A genomes based on VCF or BAM files (mapped to Paratyphi A AKU_12601 reference genome)
 
 
@@ -111,109 +114,10 @@ Requires [SAMtools](http://samtools.sourceforge.net/) and [BCFtools](https://sam
 
 Output is to standard out, in tab delimited format.
 
-TBC.
-
-
 ## Generating input BAMS from reads
 
 We recommend using [Bowtie2](http://bowtie-bio.sourceforge.net/bowtie2/index.shtml) to align reads to the Paratyphi A AKU_12601 (FM200053) reference, and [SAMtools](http://http://samtools.sourceforge.net/) to convert the *.sam file to the *.bam format.  The resulting bam file(s) can be passed directly to this script via --bam.  Please note the differences in the commands listed below when using SAMtools v1.1/1.2 vs. SAMtools v1.3.1 to generate bam files.
 
-For example:
-
-```
-# Download Paratyphi A AKU_12601 (FM200053) and unzip the reference genome
-
-wget -O ...
-
-gunzip ...
-
-# Separate the chromosome sequence from the plasmids with the emboss toolkit
-seqretsplit ...
-
-mv ...
-
-# Replace the header line of the Paratyphi A AKU_12601 (FM200053) file with the reference id i.e. chage
-
-...
-
-# to
-...
-
-# Download reads for ...
-
-wget ...
-wget ...
-
-# Use bowtie to map reads to the Paratyphi A AKU_12601 (FM200053) reference genome
-
-For example, to align paired end reads to the Paratyphi A AKU_12601 (FM200053) reference genome sequence:
-
-bowtie2-build ...
-
-bowtie2 -p 2 -x ... -1 ... -2 ... -S ...
- 
-samtools view -bS ... > ...
-
-samtools sort ... output
-
-(or, 'samtools sort unsorted_output.bam > output.bam' for SAMtools v1.3.1 instead of SAMtools v1.2/1.1)
-
-# Call ... genotypes from the resulting BAM(s)
-
-python genoparatyphi.py --mode bam --bam output.bam --ref ... --ref_id ... --output genotypes_test.txt
-
-```
-
-#### Output
-
-tBC
-
-```
-TBC
-
-```
-
 ## Generating input VCFs from assemblies
 
 We recommend using [ParSNP](http://harvest.readthedocs.org/) to align genomes to the Paratyphi A AKU_12601 (FM200053) reference. The resulting multi-sample VCF file(s) can be passed directly to this script via --vcf_parsnp.
-
-For example:
-
-```
-# Download Paratyphi A AKU_12601 (FM200053) reference genome
-
-wget ...
-
-gunzip ...
-mv ... ...
-
-# Download two example Paratyphi A genomes for genotyping
-
-wget ...
-wget ...
-
-gunzip ...
-gunzip ...
-
-mkdir genomes/
-mv ... genomes/...
-mv ... genomes/...
-
-# Use ParSNP to generate variant calls (VCF) for these genomes against the Paratyphi A AKU_12601 (FM200053) reference sequence
-
-parsnp -r ... -d genomes/ -o output
-
-# Call ... from the resulting VCF
-
-python genoparatyphi.py --mode vcf_parsnp --vcf output/parsnp.vcf --output genotypes_parsnptest.txt
-
-```
-#### Output
-
-TBC
-
-```
-TBC
-
-```
-
